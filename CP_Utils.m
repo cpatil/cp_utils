@@ -62,10 +62,10 @@
 
 +(NSString *)documentsDirPath
 {
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
-//    return ([paths objectAtIndex:0]);
-    return [[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
-                                                   inDomains:NSUserDomainMask] lastObject] path];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    return ([paths objectAtIndex:0]);
+//    return [[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
+//                                                   inDomains:NSUserDomainMask] lastObject] path];
 }
 
 +(NSURL *)documentsDirUrl
