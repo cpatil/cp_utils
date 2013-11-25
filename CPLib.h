@@ -15,6 +15,7 @@
 #import "CP_LoggingUtils.h"
 #import "CP_RangeMapper.h"
 #import "NSFileManager+Sorting.h"
+#import "UIImage+Scale.h"
 
 #define DISPATCH_SECONDS_FROM_NOW(s) dispatch_time(DISPATCH_TIME_NOW, (s) * NSEC_PER_SEC)
 
