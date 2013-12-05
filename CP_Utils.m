@@ -134,7 +134,14 @@
 
 + (void)showError:(NSError *)error
 {
-    [self showAlertWithTitle:[NSString stringWithFormat:@"Error encountered (code %d)", (int)[error code]]
+    [self showAlertWithTitle:[NSString stringWithFormat:@"Crash! (%ld)", (long)[error code] ]
+              andWithMessage:[error localizedDescription]];
+}
+
++(void)showErrorWithTitle:(NSString *)title
+                 andError:(NSError *)error
+{
+    [self showAlertWithTitle:title
               andWithMessage:[error localizedDescription]];
 }
 
@@ -159,7 +166,7 @@
 }
 
 +(NSError *)createCustomErrorWithDesc:(NSString *)errorDetailValue
-                andCode:(int)errCode
+                andCode:(NSInteger)errCode
 {
     NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
     [errorDetail setValue:errorDetailValue forKey:NSLocalizedDescriptionKey];

@@ -37,6 +37,8 @@
 
 +(void)showAlertWithTitle:(NSString *)title
            andWithMessage:(NSString *)message;
++(void)showErrorWithTitle:(NSString *)title
+           andError:(NSError *)error;
 + (void)showError:(NSError *)error;
 
 +(NSError *)copyFileAtUrl:(NSURL *) srcUrl
@@ -45,7 +47,7 @@
                toPath:(NSString *) destPath;
 
 +(NSError *)createCustomErrorWithDesc:(NSString *)errorDetailValue
-                              andCode:(int)errCode;
+                              andCode:(NSInteger)errCode;
 
 +(NSArray *)findFilesInDocumentsDir:(NSString *)ext;
 
