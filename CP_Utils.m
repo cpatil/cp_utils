@@ -196,7 +196,7 @@
         NSString *newUniqueIdString = (__bridge_transfer NSString *)CFUUIDCreateString(kCFAllocatorDefault, newUniqueId);
         CFRelease(newUniqueId);
         
-        uniqueFilename = [[folder stringByAppendingPathComponent:newUniqueIdString] stringByAppendingPathExtension:fileExtension];
+        uniqueFilename = [[folder stringByAppendingPathComponent:[@"ts_" stringByAppendingString:newUniqueIdString]] stringByAppendingPathExtension:fileExtension];
     } while ([existingFiles containsObject:uniqueFilename]);
     
     return uniqueFilename;
