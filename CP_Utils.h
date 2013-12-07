@@ -34,6 +34,9 @@
 +(BOOL)documentsDirHasExistingFile:(NSString *)fileName;
 +(BOOL)fileExistsAtPath:(NSString *)filePath;
 + (NSString *)getUniqueFilenameInFolder:(NSString *)folder forFileExtension:(NSString *)fileExtension;
++ (NSString *)getUniqueFilenameInFolder:(NSString *)folder forFileExtension:(NSString *)fileExtension withPrefix:(NSString *)prefix;
++(NSError *)deleteFileAtPath:(NSURL *)fileURL;
+
 
 +(void)showAlertWithTitle:(NSString *)title
            andWithMessage:(NSString *)message;

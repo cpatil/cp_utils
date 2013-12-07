@@ -82,6 +82,13 @@
     //        return ([[NSFileManager defaultManager] isReadableFileAtPath:filePath] == YES);
 }
 
++(NSError *)deleteFileAtPath:(NSURL *)fileURL
+{
+    NSError *error;
+    [[NSFileManager defaultManager] removeItemAtURL:fileURL error:&error];
+    return error;
+}
+
 +(BOOL)documentsDirHasExistingFile:(NSString *)fileName
 {
     return ([self fileExistsAtPath:[self documentsPathForFile:fileName]]);
@@ -201,6 +208,13 @@
     
     return uniqueFilename;
 }
+
++ (NSString *)getUniqueFilenameInFolder:(NSString *)folder forFileExtension:(NSString *)fileExtension withPrefix:(NSString *)prefix
+{
+    NSString *fname = [self getUniqueFilenameInFolder:folder forFileExtension:fileExtension withPrefix:prefix];
+    return [prefix stringByAppendingString:fname];
+}
+
 
 +(NSString *)uuid {
     // Returns a UUID
