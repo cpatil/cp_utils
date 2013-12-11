@@ -255,4 +255,35 @@
     return matches;
 }
 
++(UIActivityIndicatorView *)createLoadingIndicatorIn:(UIView *)view
+{
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    indicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+    indicator.center = view.center;
+    [view addSubview:indicator];
+    [indicator bringSubviewToFront:view];
+//    [UIApplication sharedApplication].networkActivityIndicatorVisible = TRUE;
+    return indicator;
+}
+
++(void)removeLoadingIndicator:(UIActivityIndicatorView *)indicator
+{
+    [indicator stopAnimating];
+    [indicator removeFromSuperview];
+}
+
++(void)showLoadingIndicator:(UIActivityIndicatorView *)indicator
+{
+    indicator.hidden = NO;
+    [indicator startAnimating];
+}
+
++(void)hideLoadingIndicator:(UIActivityIndicatorView *)indicator
+{
+    [indicator stopAnimating];
+    indicator.hidden = YES;
+}
+
+
+
 @end

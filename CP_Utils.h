@@ -55,4 +55,11 @@
 +(NSArray *)findFilesInDocumentsDir:(NSString *)ext;
 
 + (BOOL)addSkipBackupAttributeToItemAtURL:(NSURL *)URL;
+
++(UIActivityIndicatorView *)createLoadingIndicatorIn:(UIView *)view;
++(void)removeLoadingIndicator:(UIActivityIndicatorView *)indicator;
++(void)showLoadingIndicator:(UIActivityIndicatorView *)indicator;
++(void)hideLoadingIndicator:(UIActivityIndicatorView *)indicator;
+
+
 @end
